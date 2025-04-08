@@ -15,7 +15,12 @@ public class DynamicStringList implements StringList {
     };
 
    public void set(int var1, String var2){
-
+     if(var1 < 0 || var1 >= size()){
+          throw new IndexOutOfBoundsException();
+     }else{
+          arr[var1] = var2;
+     }
+     
    };
 
    public void add(String var1){
