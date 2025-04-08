@@ -58,11 +58,11 @@ public class DynamicStringList implements StringList {
           return removedString;
      }
    };
-   //Amount in current actual array
+   //Amount holding
    public int size(){
         return index;
    };
-   //Amount able to hold
+   //Amount can hold
    public int capacity(){
         return arr.length;
    };
