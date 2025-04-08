@@ -28,7 +28,20 @@ public class DynamicStringList implements StringList {
    };
 
    public void add(String var1){
+     if(index + 1 >= arr.length)
+     {
+          String[] newArr = new String[arr.length * 2];
 
+          for(int i = 0; i <= index; i++)
+          {
+               newArr[i] = arr[i];
+          }
+
+          arr = newArr;
+     }
+
+     index++;
+     arr[index] = var1;
    };
 
    public String remove(int var1){
