@@ -1,13 +1,31 @@
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
-public class DynamicStringListTest
+
+class DynamicStringListTest
 {
+    @Test
+    void testAddMethod()
+    {
+        DynamicStringList list = new DynamicStringList();
+        
+        list.add("Hello");
+        list.add("Good");
+
+        assertEquals(2, list.size());
+    }
+
     @Test
     void testGetMethod()
     {
+        DynamicStringList list = new DynamicStringList();
         
+        list.add("Hello");
+        list.add("Good");
+
+        String result = list.get(0);
+
+        assertEquals("Hello", result);
     }
 
 }

@@ -11,7 +11,7 @@ public class DynamicStringList implements StringList {
      }
 
     public String get(int var1){
-          if(var1 < 0 || var1 >= size())
+          if(var1 < 0 || var1 >= index)
           {
                throw new IndexOutOfBoundsException("Out of range");
           }
@@ -19,7 +19,7 @@ public class DynamicStringList implements StringList {
     };
 
    public void set(int var1, String var2){
-     if(var1 < 0 || var1 >= size()){
+     if(var1 < 0 || var1 >= index){
           throw new IndexOutOfBoundsException();
      }else{
           arr[var1] = var2;
@@ -45,11 +45,11 @@ public class DynamicStringList implements StringList {
    };
 
    public String remove(int var1){
-     if(var1 < 0 || var1 >= size()){
+     if(var1 < 0 || var1 >= index){
           throw new IndexOutOfBoundsException();
      }else{
           String removedString = arr[var1];
-          for(int i = var1; i < size(); i++){
+          for(int i = var1; i < index; i++){
                arr[i] = arr[i + 1];
           }
           arr[index] = null;
@@ -60,7 +60,7 @@ public class DynamicStringList implements StringList {
    };
    //Amount holding
    public int size(){
-        return index;
+        return index+1;
    };
    //Amount can hold
    public int capacity(){
