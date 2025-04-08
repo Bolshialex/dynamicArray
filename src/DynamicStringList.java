@@ -60,10 +60,10 @@ public class DynamicStringList implements StringList {
    };
    //Amount in current actual array
    public int size(){
-        return -1;
+        return index;
    };
    //Amount able to hold
    public int capacity(){
-        return -1;
+        return arr.length;
    };
 }
