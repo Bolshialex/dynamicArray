@@ -1,6 +1,6 @@
 public class DynamicStringList implements StringList {
-    String[] arr; 
-    int index = -1;
+    private String[] arr; 
+    private int index = -1;
 
     public DynamicStringList(){
         arr = new String[10];
@@ -11,10 +11,10 @@ public class DynamicStringList implements StringList {
      }
 
     public String get(int var1){
-     if(var1 < 0 || var1 >= size())
-     {
-          throw new IndexOutOfBoundsException("Out of range");
-     }
+          if(var1 < 0 || var1 >= size())
+          {
+               throw new IndexOutOfBoundsException("Out of range");
+          }
         return arr[var1];
     };
 
@@ -32,7 +32,18 @@ public class DynamicStringList implements StringList {
    };
 
    public String remove(int var1){
-        return null;
+     if(var1 < 0 || var1 >= size()){
+          throw new IndexOutOfBoundsException();
+     }else{
+          String removedString = arr[var1];
+          for(int i = var1; i < size(); i++){
+               arr[i] = arr[i + 1];
+          }
+          arr[index] = null;
+          index--;
+          
+          return removedString;
+     }
    };
    //Amount in current actual array
    public int size(){
