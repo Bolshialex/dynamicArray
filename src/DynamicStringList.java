@@ -11,10 +11,10 @@ public class DynamicStringList implements StringList {
      }
 
     public String get(int var1){
-          if(var1 < 0 || var1 >= size())
-          {
-               throw new IndexOutOfBoundsException("Out of range");
-          }
+     if(var1 < 0 || var1 >= size())
+     {
+          throw new IndexOutOfBoundsException("Out of range");
+     }
         return arr[var1];
     };
 
