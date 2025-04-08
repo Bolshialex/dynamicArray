@@ -7,11 +7,15 @@ public class DynamicStringList implements StringList {
     }
 
     public DynamicStringList(int capacity){
-     arr = new String[capacity];
+          arr = new String[capacity];
      }
 
     public String get(int var1){
-        return null;
+          if(var1 < 0 || var1 >= size())
+          {
+               throw new IndexOutOfBoundsException("Out of range");
+          }
+        return arr[var1];
     };
 
    public void set(int var1, String var2){
