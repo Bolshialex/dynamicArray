@@ -6,6 +6,10 @@ public class DynamicStringList implements StringList {
         arr = new String[10];
     }
 
+    public DynamicStringList(int capacity){
+     arr = new String[capacity];
+     }
+
     public String get(int var1){
         return null;
     };
@@ -21,11 +25,11 @@ public class DynamicStringList implements StringList {
    public String remove(int var1){
         return null;
    };
-
+   //Amount in current actual array
    public int size(){
         return -1;
    };
-
+   //Amount able to hold
    public int capacity(){
         return -1;
    };
