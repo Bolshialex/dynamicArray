@@ -1,10 +1,10 @@
 public class DynamicStringList implements StringList {
     String[] arr; 
-    int size;
+    int lastIndex;
 
     public DynamicStringList(){
         arr = new String[10];
-        size = arr.length;
+        lastIndex = arr.length-1;
     }
 
     public String get(int var1){
