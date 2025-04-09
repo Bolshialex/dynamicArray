@@ -1,8 +1,6 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.List;
-
 
 class DynamicStringListTest
 {
@@ -18,6 +16,19 @@ class DynamicStringListTest
         assertEquals(2, list.size());
     }
 
+    @Test
+    void testAddAndRemoveMethod()
+    {
+        DynamicStringList list = new DynamicStringList();
+        
+        list.add("Hello");
+        list.add("Good");
+        assertEquals(2, list.size());
+        assertEquals("Good", list.remove(1));
+        list.add("test");
+        assertEquals(2, list.size());
+        assertEquals("test", list.get(1));
+    }
 
     @Test
     void testAddStringResult()
