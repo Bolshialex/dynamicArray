@@ -95,6 +95,20 @@ class DynamicStringListTest
     }
 
     @Test
+    void testRemoveResult()
+    {
+        DynamicStringList list = new DynamicStringList();
+        
+        list.add("Hello");
+        list.add("Good");
+        list.add("bruh");
+        list.add("okay");
+        list.add("great");
+        String result = list.remove(4);
+        assertEquals("great", result);
+    }
+
+    @Test
     void testSizeMethod(){
         DynamicStringList list = new DynamicStringList();
         
