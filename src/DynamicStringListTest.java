@@ -54,5 +54,41 @@ class DynamicStringListTest
         assertEquals(1, list.size());
     }
 
+    @Test
+    void testSizeMethod(){
+        DynamicStringList list = new DynamicStringList();
+        
+        list.add("Hello");
+        list.add("Good");
 
+        assertEquals(2, list.size());
+    }
+
+    @Test
+    void testCapacityMethod(){
+        DynamicStringList list = new DynamicStringList();
+        
+        list.add("Hello");
+        list.add("Good");
+
+        assertEquals(10, list.capacity());
+    }
+
+    @Test
+    void testSizeDouble(){
+        DynamicStringList list = new DynamicStringList(2);
+        
+        list.add("Hello");
+        list.add("Good");
+        assertEquals(2, list.capacity());
+
+        list.add("Add");
+
+        assertEquals(4, list.capacity());
+
+        list.add("Eight");
+        list.add("Bruh");
+
+        assertEquals(8, list.capacity());
+    }
 }
