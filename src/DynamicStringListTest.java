@@ -1,6 +1,8 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.List;
+
 
 class DynamicStringListTest
 {
@@ -14,6 +16,19 @@ class DynamicStringListTest
         list.add("Good");
 
         assertEquals(2, list.size());
+    }
+
+
+    @Test
+    void testAddStringResult()
+    {
+        DynamicStringList list = new DynamicStringList();
+        
+        list.add("Hello");
+        list.add("Good");
+
+        assertEquals("Hello", list.get(0));
+        assertEquals("Good", list.get(1));
     }
 
     @Test
@@ -43,6 +58,19 @@ class DynamicStringListTest
     }
 
     @Test
+    void testSetEndArray()
+    {
+        DynamicStringList list = new DynamicStringList();
+        
+        list.add("Hello");
+        list.add("Good");
+
+        list.set(1, "Goodbye");
+
+        assertEquals("Goodbye", list.get(1));
+    }
+
+    @Test
     void testRemoveMethod()
     {
         DynamicStringList list = new DynamicStringList();
@@ -51,6 +79,18 @@ class DynamicStringListTest
         list.add("Good");
         assertEquals(2, list.size());
         list.remove(0);
+        assertEquals(1, list.size());
+    }
+
+    @Test
+    void testRemoveLastIndex()
+    {
+        DynamicStringList list = new DynamicStringList();
+        
+        list.add("Hello");
+        list.add("Good");
+        assertEquals(2, list.size());
+        list.remove(1);
         assertEquals(1, list.size());
     }
 
